@@ -86,6 +86,15 @@
   {$DEFINE DXE3+}
 {$ENDIF}
 
+// Delphi XE4
+{$IFDEF VER250}
+  {$DEFINE D2010+}
+  {$DEFINE DXE+}
+  {$DEFINE DXE2+}
+  {$DEFINE DXE3+}
+  {$DEFINE DXE4+}
+{$ENDIF}
+
 // Delphi XE6
 {$IFDEF VER270}
   {$DEFINE D2010+}

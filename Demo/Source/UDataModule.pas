@@ -1,4 +1,4 @@
-{******************************************************************************}
+﻿{******************************************************************************}
 {                                                                              }
 {       SVG Icon ImageList: An extended ImageList for Delphi/VCL               }
 {       to simplify use of Icons (resize, colors and more...)                  }
@@ -31,7 +31,10 @@ interface
 
 uses
   System.SysUtils, System.Classes,
-  SVGIconImageCollection, Vcl.BaseImageCollection
+  SVGIconImageCollection
+  {$IFDEF DXE5+}
+  , Vcl.BaseImageCollection
+  {$ENDIF}
   ;
 
 type

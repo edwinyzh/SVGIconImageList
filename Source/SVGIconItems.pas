@@ -1,4 +1,4 @@
-{******************************************************************************}
+﻿{******************************************************************************}
 {                                                                              }
 {       SVGIconImageList: An extended ImageList for Delphi/VCL                 }
 {       to simplify use of SVG Icons (resize, opacity and more...)             }
@@ -38,7 +38,7 @@ uses
   System.Types,
   System.UITypes,
   System.Classes,
-  {$IFDEF DXE4+}System.Messaging,{$ELSE}SVGMessaging,{$ENDIF}
+  {$IFDEF DXE5+}System.Messaging,{$ELSE}SVGMessaging,{$ENDIF}
   Winapi.Windows,
   Vcl.Graphics,
   SVGInterfaces;
@@ -50,7 +50,7 @@ type
   ///   Message sent when SVG icon items are updated.
   ///   Used internally to notify image lists of changes to the icon collection.
   /// </summary>
-  TSVGItemsUpdateMessage = class({$IFDEF DXE4+}System.Messaging.{$ELSE}SVGMessaging.{$ENDIF}TMessage)
+  TSVGItemsUpdateMessage = class({$IFDEF DXE5+}System.Messaging.{$ELSE}SVGMessaging.{$ENDIF}TMessage)
   end;
 
   /// <summary>
@@ -676,7 +676,7 @@ end;
 procedure TSVGIconItems.Update(Item: TCollectionItem);
 begin
   inherited;
-  {$IFDEF DXE4+}System.Messaging{$ELSE}SVGMessaging{$ENDIF}.TMessageManager.DefaultManager.SendMessage(Self,
+  {$IFDEF DXE5+}System.Messaging{$ELSE}SVGMessaging{$ENDIF}.TMessageManager.DefaultManager.SendMessage(Self,
     TSVGItemsUpdateMessage.Create);
 
   {$IFDEF D10_3+}

@@ -1,4 +1,4 @@
-{******************************************************************************}
+﻿{******************************************************************************}
 {                                                                              }
 {       SVGIconImageList: An extended ImageList for Delphi/VCL                 }
 {       to simplify use of SVG Icons (resize, opacity and more...)             }
@@ -38,7 +38,7 @@ uses
   WinApi.Windows,
   Winapi.CommCtrl,
   System.Classes,
-  {$IFDEF DXE4+}System.Messaging,{$ELSE}SVGMessaging,{$ENDIF}
+  {$IFDEF DXE5+}System.Messaging,{$ELSE}SVGMessaging,{$ENDIF}
   Vcl.Controls,
   Vcl.Graphics,
 {$IFDEF D10_3+}
