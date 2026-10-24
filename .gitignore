@@ -71,3 +71,4 @@ modules/
 Demo/Bin
 unins000.dat
 Packages/*/*.res
+/Demo/DXE4/*.res
